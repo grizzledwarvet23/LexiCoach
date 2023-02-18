@@ -69,7 +69,7 @@ function handleSubmit(event) {
   }
 
   function handleDonate(event) {
-    
+    try {
     // let name = document.getElementById("name").value;
     // let quantity = document.getElementById("quantity").value;
     // let email = document.getElementById("email").value;
@@ -78,5 +78,10 @@ function handleSubmit(event) {
     // let url ='https://sandbox.checkbook.io/v3/invoice';
     // xhr.open('POST', url, true);
     // xhr.setRequestHeader('Content-Type', 'application/json', "Authorization":"9eb04080daf74da76074eff1be227371:");
+    }
+    catch (error) {
+        console.log(error);
+        window.location.href = "/";
+    }
 
 }

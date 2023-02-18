@@ -102,3 +102,21 @@ body {
 .donate-btn:hover {
 	background-color: #e74c3c;
 }
+
+.form-label {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.form-input {
+	display: block;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border: none;
+	border-radius: 20px;
+	font-size: 16px;
+	width: 100%;
+	box-sizing: border-box;
+}

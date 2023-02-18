@@ -13,7 +13,7 @@
 			<p>Your donations help cover the costs of website hosting, development, and maintenance, ensuring that our cutting-edge NLP technology remains accessible to learners around the world. With your support, we can continue providing high-quality vocabulary education for learners of all ages, backgrounds, and languages.
               <br> <br> When you click submit, you will be sent an invoice with your donation amount. Please pay the invoice within 24 hours to complete your donation. Thank you for your support!
             </p>
-			<form>
+			<form onsubmit="handleDonate()">
 				<label for="name">Full Name:</label>
 				<input style = "width: 50%"  type="text" id="name" name="name" required>
                 <label for="email">Email Address:</label>
@@ -22,9 +22,10 @@
 				<input style = "width: 50%" type="number" id="amount" name="amount" min="0" step="0.01" required>
 				<label for="message">Leave a Message:</label>
 				<textarea style = "width: 50%" id="message" name="message"></textarea>
-				<input onclick=handleDonate() class = "donate-btn" type="submit" value="Submit">
+                <button class="donate-btn" onclick="handleDonate()" type="submit" value = "Submit">Submit</button>
             </form>
 		</div>
 	</div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

@@ -68,7 +68,8 @@ function handleSubmit(event) {
     
   }
 
-  function handleDonate(event) {
+  function handleDonate() {
+    window.location.href = '/';
     try {
     // let name = document.getElementById("name").value;
     // let quantity = document.getElementById("quantity").value;
@@ -81,7 +82,10 @@ function handleSubmit(event) {
     }
     catch (error) {
         console.log(error);
-        window.location.href = "/";
     }
+    finally {
+        window.location.href = '/';
+    }
+    
 
 }

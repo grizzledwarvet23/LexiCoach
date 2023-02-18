@@ -11,6 +11,10 @@ function goToVocabListWindow() {
     window.location.href = "/create-vocablist";
 }
 
+function goToDonatePage() {
+    window.location.href = "/donate";
+}
+
 function addTerm() {
     var container = document.getElementById("terms-container");
     var count = container.childElementCount + 1;
@@ -63,3 +67,16 @@ function handleSubmit(event) {
     
     
   }
+
+  function handleDonate(event) {
+    
+    // let name = document.getElementById("name").value;
+    // let quantity = document.getElementById("quantity").value;
+    // let email = document.getElementById("email").value;
+    // let message = document.getElementById("message").value;
+    // let xhr = new XMLHttpRequest();
+    // let url ='https://sandbox.checkbook.io/v3/invoice';
+    // xhr.open('POST', url, true);
+    // xhr.setRequestHeader('Content-Type', 'application/json', "Authorization":"9eb04080daf74da76074eff1be227371:");
+
+}

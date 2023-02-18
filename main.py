@@ -10,6 +10,10 @@ def home():
 def create_vocablist():
     return render_template('create.html')
 
+@app.route('/donate')
+def donation():
+    return render_template('donation.html')
+
 @app.route('/create', methods=['GET', 'POST'])
 def process_submittedlist():
     if request.method == 'POST':
@@ -30,6 +34,7 @@ def process_submittedlist():
     data = request.get_json()
     print(data)
     return jsonify({'message': 'Data received successfully'})
+
 
 
 if __name__ == '__main__':

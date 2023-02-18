@@ -10,17 +10,16 @@
 	<div class="container">
 		<div class="box">
 			<h1>Help keep LexiCoach Free!</h1>
-			<p>Your donations help cover the costs of website hosting, development, and maintenance, ensuring that our cutting-edge Natural Language Processing technology remains accessible to learners around the world. With your support, we can continue providing high-quality vocabulary education for learners of all ages and backgrounds.
-
-                <br> When you click submit, you will be sent an invoice with your donation amount. Please pay the invoice within 24 hours to complete your donation. Thank you for your support!
+			<p>Your donations help cover the costs of website hosting, development, and maintenance, ensuring that our cutting-edge NLP technology remains accessible to learners around the world. With your support, we can continue providing high-quality vocabulary education for learners of all ages, backgrounds, and languages.
+              <br> <br> When you click submit, you will be sent an invoice with your donation amount. Please pay the invoice within 24 hours to complete your donation. Thank you for your support!
             </p>
 			<form>
 				<label for="name">Full Name:</label>
 				<input style = "width: 50%"  type="text" id="name" name="name" required>
-				<label for="amount">Quantity Donated:</label>
-				<input style = "width: 50%" type="number" id="amount" name="amount" min="0" step="0.01" required>
-				<label for="email">Email Address:</label>
+                <label for="email">Email Address:</label>
 				<input style = "width: 50%" type="email" id="email" name="email" required>
+				<label for="amount">Quantity to Donate (USD):</label>
+				<input style = "width: 50%" type="number" id="amount" name="amount" min="0" step="0.01" required>
 				<label for="message">Leave a Message:</label>
 				<textarea style = "width: 50%" id="message" name="message"></textarea>
 				<input onclick=handleDonate() class = "donate-btn" type="submit" value="Submit">

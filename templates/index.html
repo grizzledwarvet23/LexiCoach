@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LexiCoach</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="container">
+		<h1 class="title">LexiCoach</h1>
+		<div class="recently-viewed">
+			<h2 class="section-title">Recently Viewed Lists</h2>
+			<div class="scroll-box">
+				<button class="recent-btn">Economic Terms</button>
+				<button class="recent-btn">Spanish Literature</button>
+				<button class="recent-btn">CS 101</button>
+        <button class="recent-btn">Art History</button>
+        <button class="recent-btn">Medical Terminology</button>
+        <button class="recent-btn">Italian Vocabulary</button>
+        <button class="recent-btn">GRE Words</button>
+        <button class="recent-btn">Environmental Science</button>
+        <button class="recent-btn">Psychology Terms</button>
+        <button class="recent-btn">German Vocabulary</button>
+        <button class="recent-btn">French Literature</button>
+        <button class="recent-btn">Political Science Terms</button>
+			</div>
+		</div>
+		<button class="create-btn">Create New Vocab List +</button>
+		<button class="donate-btn">Donate</button>
+	</div>
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

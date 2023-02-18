@@ -3,7 +3,7 @@
  
  ## Motivation
  
- Language is complex -- extremely complex. When learning a new language, simply google translating words or phrases and stringing them together results in a significant loss of context and nuance. Even in your native language, it can be a steep learning curve to familiarize yourself with technical vocabulary words in without a proper understanding of them. Through LexiCoach, we hope to automate the process for language users of all fluency levels to develop their language skills in the way they need the most.
+Learning vocabulary in a new language is hard! Flash-card style apps can help, but they only let you practice you understanding of vocabulary in a very narrow setting. LexiCoach uses a GPT-3 based model to generate in-context exercises that allow you to practice new vocabulary in a target language. LexiCoach allows you to tailor your language practice to your own interests.
  
 ## Tech Stack
 

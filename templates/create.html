@@ -9,9 +9,9 @@
 <body>
 	<div class="container">
 		<h1 class="title">Create New VocabList</h1>
-		<form>
+		<form onsubmit="handleSubmit(event)">
 			<label for="vocablist-title" class="form-label">VocabList Title:</label>
-			<input type="text" id="vocablist-title" name="vocablist-title" class="form-input" required>
+			<input placeholder="Enter title..." type="text" id="vocablist-title" name="vocablist-title" class="form-input" required>
 
 			<label for="language" class="form-label">Language:</label>
 			<select id="language" name="language" class="form-input">
@@ -22,30 +22,30 @@
 				<option value="italian">Italian</option>
 			</select>
 
-			<div class="terms-container">
-				<div class="term-group">
-					<label for="term1" class="form-label">Term 1:</label>
-					<input type="text" id="term1" name="term1" class="form-input" required>
-				</div>
-				<div class="term-group">
-					<label for="term2" class="form-label">Term 2:</label>
-					<input type="text" id="term2" name="term2" class="form-input" required>
-				</div>
-				<div class="term-group">
-					<label for="term3" class="form-label">Term 3:</label>
-					<input type="text" id="term3" name="term3" class="form-input" required>
-				</div>
-				<div class="term-group">
-					<label for="term4" class="form-label">Term 4:</label>
-					<input type="text" id="term4" name="term4" class="form-input" required>
-				</div>
-				<div class="term-group">
-					<label for="term5" class="form-label">Term 5:</label>
-					<input type="text" id="term5" name="term5" class="form-input" required>
-				</div>
-			</div>
+			<div id="terms-container">
+                <div class="term-group">
+                    <label for="term1" class="form-label">Term 1:</label>
+                    <input placeholder="Enter term..." type="text" id="term1" name="term1" class="form-input" required>
+                </div>
+                <div class="term-group">
+                    <label for="term2" class="form-label">Term 2:</label>
+                    <input placeholder="Enter term..." type="text" id="term2" name="term2" class="form-input" required>
+                </div>
+                <div class="term-group">
+                    <label for="term3" class="form-label">Term 3:</label>
+                    <input placeholder="Enter term..." type="text" id="term3" name="term3" class="form-input" required>
+                </div>
+                <div class="term-group">
+                    <label for="term4" class="form-label">Term 4:</label>
+                    <input placeholder="Enter term..." type="text" id="term4" name="term4" class="form-input" required>
+                </div>
+                <div class="term-group">
+                    <label for="term5" class="form-label">Term 5:</label>
+                    <input placeholder="Enter term..." type="text" id="term5" name="term5" class="form-input" required>
+                </div>
+            </div>
 
-			<button class="add-term-btn" type="button">Add More Terms +</button>
+			<button id="addTermBtn" onclick="addTerm()" class="add-term-btn" type="button">Add Term +</button>
 
 			<button class="create-btn" type="submit">Create</button>
 		</form>

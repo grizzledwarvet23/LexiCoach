@@ -120,3 +120,17 @@ body {
 	width: 100%;
 	box-sizing: border-box;
 }
+
+.add-term-btn {
+	/* it should be
+	stylized so it should have no background fill, be a 
+	light blueish color, and be small and placed to the left of the input */
+	
+	/* add the following styles */
+	background-color: transparent;
+	color: #3498db;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	
+}

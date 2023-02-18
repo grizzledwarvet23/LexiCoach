@@ -40,6 +40,7 @@ function addTerm() {
 }
 
 function handleSubmit(event) {
+    window.location.href = "/";
     event.preventDefault();
 
     const form = event.target;
@@ -58,34 +59,34 @@ function handleSubmit(event) {
         .then(data => {
           console.log(data);
           // Redirect to home.html
-          window.location.href = '/create';
+          window.location.href = '/';
         })
         .catch(error => console.error(error));
-
-
-    //window.location.href = "/submittedlist";
-    
     
   }
 
-  function handleDonate() {
-    window.location.href = '/';
-    try {
-    // let name = document.getElementById("name").value;
-    // let quantity = document.getElementById("quantity").value;
-    // let email = document.getElementById("email").value;
-    // let message = document.getElementById("message").value;
-    // let xhr = new XMLHttpRequest();
-    // let url ='https://sandbox.checkbook.io/v3/invoice';
-    // xhr.open('POST', url, true);
-    // xhr.setRequestHeader('Content-Type', 'application/json', "Authorization":"9eb04080daf74da76074eff1be227371:");
+  function handleDonate(event) {
+    window.location.href = "/";
+    event.preventDefault();
+    //window.location.href = "/";
+    let name = document.getElementById("name").value;
+    let quantity = document.getElementById("quantity").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    payload = {
+        "amount": quantity,
+        "description": message,
+        "name": name,
+        "recipient": email
     }
-    catch (error) {
-        console.log(error);
-    }
-    finally {
-        window.location.href = '/';
-    }
+    console.log(payload);
+    let xhr = new XMLHttpRequest();
+    let url ='https://sandbox.checkbook.io/v3/invoice';
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Authorization', "9eb04080daf74da76074eff1be227371:c75c4dd7b6f2fea01b3c28c98acacaff");
     
-
+    xhr.send(JSON.stringify(payload));
+    
 }
+

@@ -26,15 +26,11 @@ def submit_invoice():
   }
 
   print(payload)
-  try:
-    response = json.loads(requests.post(url, json=payload, headers=headers))
-    if "error" in response:
-      return Response("Invoice can't be issued.", status=404)
-    else:
-      print(response.text)
-      return Response("Invoice issued successfully.", status=200)
-  except:
-    return Response("Invoice not posted.", status=404)
-
+  response = requests.post(url, json=payload, headers=headers)
+  if "error" in response:
+    return Response("Invoice can't be issued.", status=404)
+  else:
+    print(response.text)
+    return Response("Invoice issued successfully.", status=200)
 
 app.run(host='0.0.0.0', port=2333)

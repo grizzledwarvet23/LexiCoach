@@ -6,6 +6,11 @@ function goToVocabListWindow() {
     window.location.href = "/create-vocablist";
 }
 
+function goToHome() {
+    window.location.href = "/";
+}
+
+
 function goToHomeWindow() {
     //print("hello");
     var l_element = document.getElementById("language");

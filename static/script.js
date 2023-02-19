@@ -85,28 +85,35 @@ function handleSubmit(event) {
     
   }
 
-  function handleDonate(event) {
+function handleDonate(event) {
     window.location.href = "/";
     event.preventDefault();
-    //window.location.href = "/";
-    let name = document.getElementById("name").value;
-    let quantity = document.getElementById("quantity").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-    payload = {
-        "amount": quantity,
-        "description": message,
-        "name": name,
-        "recipient": email
-    }
-    console.log(payload);
-    let xhr = new XMLHttpRequest();
-    let url ='https://sandbox.checkbook.io/v3/invoice';
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Authorization', "9eb04080daf74da76074eff1be227371:c75c4dd7b6f2fea01b3c28c98acacaff");
+
+    const options = {
+        method: 'POST',
+        //mode: 'no-cors',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+          Authorization: '9eb04080daf74da76074eff1be227371:c75c4dd7b6f2fea01b3c28c98acacaff',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
+        
+        body: JSON.stringify({
+            "amount": parseFloat(document.getElementById('amount').value),
+            "description": document.getElementById('message').value,
+            "name": document.getElementById('name').value,
+            "recipient": document.getElementById('email').value
+        })
+      };
     
-    xhr.send(JSON.stringify(payload));
+    console.log(options);
     
+    fetch('http://localhost:8010/proxy/v3/invoice', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+     
 }
 

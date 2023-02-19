@@ -102,7 +102,7 @@ def add():
     l.name = name
     db.session.add(l)
     db.session.commit()
-
+    
     all_lists = db.session.execute(db.select(VocabList.name)).scalars()
     return render_template('home.html',names=all_lists)
 @app.route('/editlist')

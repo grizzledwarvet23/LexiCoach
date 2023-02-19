@@ -36,6 +36,7 @@ textarea {
 	font-weight: 700;
 	margin-bottom: 20px;
 	margin-left: 30%;
+	padding-top: 5%;
 }
 
 .scroll-box {
@@ -115,14 +116,32 @@ textarea {
 	cursor: pointer;
 }
 
-.create-button {
+.home-button {
+	/* this is for the button that takes you back to the home page, make it cover the complete width of the screen */
+	/* add the following styles */
 	display: block;
 	background-color: #3d3d3d;
 	color: #fff;
-	padding: 2px 96px;
+	padding: 16px 40px;
 	border-radius: 30px;
-	font-size: 32px;
+	font-size: 20px;
 	font-weight: 600;
+	margin: 0 auto 30px;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	place-items: center;
+	width: 100%;
+}
+
+.create-button {
+	display: block;
+	/* background-color: #3d3d3d; */
+	color: black;
+	font-weight: bolder ;
+	padding: 2px 96px;
+	/* border-radius: 30px; */
+	font-size: 40px;
 	margin: 0 auto 30px;
 	border: none;
 	cursor: pointer;

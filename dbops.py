@@ -5,7 +5,7 @@
 """
 import os
 import openai
-from flask import Flask
+from flask import Flask, render_template
 from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import text
@@ -36,15 +36,12 @@ class VocabList(db.Model):
 # NOTHING BELOW THIS LINE NEEDS TO CHANGE
 # this route will test the database connection and nothing more
 @app.route('/')
-def testdb():
-    try:
-        db.session.query(text('1')).from_statement(text('SELECT 1')).all()
-        return '<h1>It works.</h1>'
-    except Exception as e:
-        # e holds description of the error
-        error_text = "<p>The error:<br>" + str(e) + "</p>"
-        hed = '<h1>Something is broken.</h1>'
-        return hed + error_text
+def home():
+    all_lists = db.session.execute(db.select(VocabList.name)).scalars()
+    print(all_lists)
+
+    return render_template('home.html',names=all_lists)
+
 @app.route('/practice')
 def practice():
     search = request.args.get('listname', '')
@@ -58,16 +55,7 @@ def practice():
     
     return (" ".join(sentences))
     
-    '''
-    toret = ""
-    
-    for a in k:
-        toret += a.vocab
-    words = toret.split()
-    
-    
-    return toret
-    '''
+
     
 @app.route('/addlist')
 def add():
@@ -81,7 +69,7 @@ def add():
     l.name = name
     db.session.add(l)
     db.session.commit()
-    return("added!")
+    return render_template('home.html')
 
 
 

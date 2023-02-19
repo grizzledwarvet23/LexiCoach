@@ -36,6 +36,7 @@ textarea {
 	font-weight: 700;
 	margin-bottom: 20px;
 	margin-left: 30%;
+	padding-top: 5%;
 }
 
 .scroll-box {
@@ -98,12 +99,12 @@ textarea {
 
 .create-button {
 	display: block;
-	background-color: #3d3d3d;
-	color: #fff;
+	/* background-color: #3d3d3d; */
+	color: black;
+	font-weight: bolder ;
 	padding: 2px 96px;
-	border-radius: 30px;
-	font-size: 32px;
-	font-weight: 600;
+	/* border-radius: 30px; */
+	font-size: 40px;
 	margin: 0 auto 30px;
 	border: none;
 	cursor: pointer;

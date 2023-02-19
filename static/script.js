@@ -6,6 +6,20 @@ function goToVocabListWindow() {
     window.location.href = "/create-vocablist";
 }
 
+function goToHomeWindow() {
+    //print("hello");
+    var l_element = document.getElementById("language");
+    var lan = l_element.options[l_element.selectedIndex].text;
+    var _name = document.getElementById("vocablist-title").value;
+    var terms_no = document.getElementById("terms-container").childElementCount;
+    var terms_tot = ""
+    for(let i = 1; i <= terms_no; i++){
+        terms_tot = terms_tot + document.getElementById("term" + i).value + ",";
+    }
+    window.location.href = "/addlist?name=" + _name + "&language=" + lan + "&terms=" + terms_tot;
+    
+}
+
 function goToDonatePage() {
     window.location.href = "/donate";
 }

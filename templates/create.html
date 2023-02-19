@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<h1 class="title">Create New VocabList</h1>
-		<form onsubmit="handleSubmit(event)">
+		<!-- <form onsubmit="handleSubmit(event)"> -->
 			<label for="vocablist-title" class="form-label">VocabList Title:</label>
 			<input placeholder="Enter title..." type="text" id="vocablist-title" name="vocablist-title" class="form-input" required>
 
@@ -48,8 +48,8 @@
 
 			<button id="addTermBtn" onclick="addTerm()" class="add-term-btn" type="button">Add Term +</button>
 
-			<button class="create-btn" type="submit">Create</button>
-		</form>
+			<button class="create-btn" onclick="goToHomeWindow()" type="submit">Create</button>
+		<!-- </form> -->
 	</div>
 
 	<script src="{{ url_for('static', filename='script.js') }}"></script>

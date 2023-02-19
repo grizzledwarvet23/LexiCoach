@@ -48,7 +48,9 @@ def donation():
 @app.route('/practice')
 def practice():
     search = request.args.get('listname', '')
-    k = db.session.execute(db.select(VocabList).filter_by(name = search)).scalar_one()
+    k = db.session.execute(db.select(VocabList).filter_by(name = search)).scalars().first()
+    if(k == None):
+        return("<p>Sorry: we couldn't find a vocab list with that name.</p><a href = '/'>Home</a>")
     words = k.vocab.split(",")
     random.shuffle(words)
     lan = k.language
@@ -65,17 +67,23 @@ def create_vocablist():
 
 @app.route('/addlist')
 def add():
+
+
     voc = request.args.get('vocab', '')
     lan = request.args.get('language', '')
     name = request.args.get('name', '')
     
+    k = db.session.execute(db.select(VocabList).filter_by(name = name)).scalars().first()
+    if(not k == None):
+        return("<p>Sorry: you already made a vocab list with that name.</p><a href = '/'>Home</a>")
+
     l = VocabList()
     l.vocab = voc
     l.language = lan
     l.name = name
     db.session.add(l)
     db.session.commit()
-
+    
     all_lists = db.session.execute(db.select(VocabList.name)).scalars()
     return render_template('home.html',names=all_lists)
 

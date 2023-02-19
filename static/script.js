@@ -22,7 +22,7 @@ function goToHomeWindow() {
         }
 
     }
-    window.location.href = "/addlist?name=" + _name + "&language=" + lan + "&terms=" + terms_tot;
+    window.location.href = "/addlist?name=" + _name + "&language=" + lan + "&vocab=" + terms_tot;
     
 }
 

@@ -19,7 +19,13 @@ function goToHomeWindow() {
     var terms_no = document.getElementById("terms-container").childElementCount;
     var terms_tot = ""
     for(let i = 1; i <= terms_no; i++){
-        terms_tot = terms_tot + document.getElementById("term" + i).value + ",";
+        if (document.getElementById("term" + i).value != ""){
+            if(i != 1){
+                terms_tot = terms_tot + ",";
+            }
+            terms_tot = terms_tot + document.getElementById("term" + i).value;
+        }
+
     }
     window.location.href = "/addlist?name=" + _name + "&language=" + lan + "&terms=" + terms_tot;
     
@@ -27,6 +33,11 @@ function goToHomeWindow() {
 
 function goToDonatePage() {
     window.location.href = "/donate";
+}
+
+function startPractice(el){
+    window.location.href = "/practice?listname=" + el.innerHTML
+
 }
 
 function addTerm() {

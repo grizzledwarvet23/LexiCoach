@@ -13,7 +13,7 @@
 			<h2 class="section-title">Recently Practiced Lists</h2>
 			<div class="scroll-box">
 			{% for i in names %}
-				<button class="recent-btn"> {{i}} </button>
+				<button class="recent-btn" onclick="startPractice(this)">{{i}}</button>
 		        {% endfor %}
 			</div>
 		</div>

@@ -22,12 +22,12 @@ def gen_sent(words,language):
               frequency_penalty=0.0,
               presence_penalty=0.0
             )
-            if re.search(r"\b"+w,response['choices'][0]['text']):
+            if re.search(r"\b"+w,response['choices'][0]['text'],flags=re.IGNORECASE):
                 solved = True
             else:
                 num_tries += 1
         
         if solved:
-            sentences += [(re.sub(r"(.*)\b"+w+"(.*)",r"\1_______\2",response['choices'][0]['text']),ind,w,response['choices'][0]['text'])]
+            sentences += [(re.sub(r"(.*)\b"+w+"(.*)",r"\1_______\2",response['choices'][0]['text'],flags=re.IGNORECASE),ind,w,response['choices'][0]['text'])]
             ind += 1
     return sentences

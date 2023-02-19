@@ -6,9 +6,10 @@ body {
 }
 
 .container {
-	max-width: 800px;
+	max-width:100%;
 	margin: 0 auto;
-	padding: 40px 20px;
+	padding: 4px 4px;
+	max-height: 100%;
 }
 
 input[type="text"],
@@ -35,7 +36,7 @@ textarea {
 	font-size: 24px;
 	font-weight: 700;
 	margin-bottom: 20px;
-	margin-left: 30%;
+	margin-left: 40%;
 	padding-top: 5%;
 }
 
@@ -103,11 +104,30 @@ textarea {
 	display: block;
 	background-color: #3d3d3d;
 	color: #fff;
-	padding: 16px 40px;
-	border-radius: 30px;
-	font-size: 20px;
+	padding: 2px 4px;
+	border-radius: 0px;
+	font-size: 16px;
 	font-weight: 600;
-	margin: 0 auto 30px;
+	margin: 0 auto 0px;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	place-items: center;
+	width: 100%;
+}
+
+.footer-button {
+	/* this is for the button that takes you back to the home page, make it cover the complete width of the screen */
+	/* add the following styles */
+	display: block;
+	background-color: #3d3d3d;
+	color: #fff;
+	padding: 2px 4px;
+	border-radius: 0px;
+	font-size: 12px;
+	font-weight: 600;
+	margin: 0 auto 0px;
+	margin-top: 96px;
 	border: none;
 	cursor: pointer;
 	text-align: center;

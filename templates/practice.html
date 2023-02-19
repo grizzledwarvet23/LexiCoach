@@ -11,6 +11,8 @@
 	<div class="container">
 		<button class="home-button" onclick="goToHome()"><h1 class="title">LexiCoach</h1></button>
 		<h1 class="title">Vocabulary Practice</h1>
+
+		<div class = "contentmain">
 		<h3><strong id="scoreholder"></strong></h3>
 		<h3>Fill in the blanks with the correct terms.</h3>
 
@@ -25,6 +27,7 @@
 
 			<button class="donate-btn" type="button" id="grader" onclick="grade()">Submit</button>
 		</form>
+		</div>
 	</div>
 
 	<script src="{{ url_for('static', filename='script.js') }}"></script>

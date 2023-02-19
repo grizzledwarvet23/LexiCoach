@@ -164,7 +164,10 @@ textarea {
 	place-items: center;
 	width: 100%;
 }
-
+.contentmain{
+	margin-left: 3%;
+	margin-right: 3%;
+}
 .create-button {
 	display: block;
 	/* background-color: #3d3d3d; */

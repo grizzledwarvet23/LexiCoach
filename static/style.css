@@ -139,6 +139,22 @@ label {
 	box-sizing: border-box;
 }
 
+.flying-text {
+	animation: fly-in 0.5s ease-out forwards;
+	opacity: 0;
+  }
+  
+  @keyframes fly-in {
+	0% {
+	  transform: translateX(-100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0%);
+	  opacity: 1;
+	}
+  }
+
 .add-term-btn {
 	/* it should be
 	stylized so it should have no background fill, be a 

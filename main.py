@@ -14,6 +14,10 @@ def create_vocablist():
 def donation():
     return render_template('donation.html')
 
+@app.route('/practice')
+def practice():
+    return render_template('practice.html')
+
 @app.route('/create', methods=['GET', 'POST'])
 def process_submittedlist():
     if request.method == 'POST':

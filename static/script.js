@@ -59,33 +59,21 @@ function addTerm() {
     container.appendChild(termGroup);
 }
 
-function handleSubmit(event) {
-    window.location.href = "/";
-    event.preventDefault();
+function grade(){
+    var num_s = document.getElementById("mainform").childElementCount;
+    for(let i = 1; i <= num_s-1; i++){
+        if(document.getElementById("word"+i).value == document.getElementById("word"+i).getAttribute("cans")){
+            document.getElementById("word"+i).style.color = "green"
+        }
+        else{
+            document.getElementById("word"+i).style.color = "red"
+        }
+    }
 
-    const form = event.target;
-    const formData = new FormData(form);
-    const formDataJSON = JSON.stringify(Object.fromEntries(formData));
+}
 
 
-    fetch('/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: formDataJSON
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-          // Redirect to home.html
-          window.location.href = '/';
-        })
-        .catch(error => console.error(error));
-    
-  }
-
-  function handleDonate(event) {
+function handleDonate(event) {
     window.location.href = "/";
     event.preventDefault();
     //window.location.href = "/";

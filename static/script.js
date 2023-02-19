@@ -31,6 +31,7 @@ function goToDonatePage() {
 }
 
 function startPractice(el){
+    el.style.backgroundColor = "#85C1E9"
     window.location.href = "/practice?listname=" + el.innerHTML
 
 }
@@ -75,10 +76,12 @@ function grade(){
         }
     }
     document.getElementById("scoreholder").innerHTML = "You got " + num_r + " of " + num_s + "."
-
-
+    document.getElementById("grader").innerHTML = "Home"
+    document.getElementById("grader").setAttribute("onclick","gohome()")
 }
-
+function gohome(){
+    window.location.href = "/"
+}
 
 function handleDonate(event) {
     window.location.href = "/";

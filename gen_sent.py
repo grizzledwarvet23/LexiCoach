@@ -3,7 +3,7 @@ import os
 import openai
 
 def gen_sent(words,language):
-    openai.api_key = os.getenv("OPENAI_API_KEY")
+    openai.api_key = "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"
     max_tries = 3
     sentences = []
     ind = 1

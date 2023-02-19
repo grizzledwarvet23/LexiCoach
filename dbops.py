@@ -40,6 +40,10 @@ class VocabList(db.Model):
 def home():
     all_lists = db.session.execute(db.select(VocabList.name)).scalars()
     return render_template('home.html',names=all_lists)
+    
+@app.route('/donate')
+def donation():
+    return render_template('donation.html')
 
 @app.route('/practice')
 def practice():

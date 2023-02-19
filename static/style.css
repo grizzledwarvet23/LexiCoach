@@ -96,8 +96,16 @@ textarea {
 	background-color: #fff;
 	border-radius: 20px;
 	display: inline-block;
-
+	cursor: pointer;
 }
+.edit-btn:hover {
+	background-color: #ccc;
+}
+
+
+
+
+
 .button-ctr{
 	white-space: nowrap;
 }

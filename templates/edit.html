@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create New VocabList</title>
+	<title>Edit VocabList</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -9,8 +9,8 @@
 </head>
 <body>
 	<div class="container">
-		<button class="create-button" onclick="goToHome()"><h1 class="title">LexiCoach</h1></button>
-		<h1 class="title">Create New VocabList</h1>
+		<button class="home-button" onclick="goToHome()"><h1 class="title">LexiCoach</h1></button>
+		<h1 class="title">Edit VocabList</h1>
 		<!-- <form onsubmit="handleSubmit(event)"> -->
 			<label for="vocablist-title" class="form-label">VocabList Title:</label>
 			<input placeholder="Enter title..." value = "{{title}}" type="text" id="vocablist-title" name="vocablist-title" class="form-input" required>

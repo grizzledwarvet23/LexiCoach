@@ -124,7 +124,13 @@ def editlist():
     all_lists = db.session.execute(db.select(VocabList.name)).scalars()
     return render_template('home.html',names=all_lists)
 
-
+@app.route('/deletelist')
+def dellist():
+    name = request.args.get('name', '')
+    VocabList.query.filter_by(name=name).delete()
+    db.session.commit()
+    all_lists = db.session.execute(db.select(VocabList.name)).scalars()
+    return render_template('home.html',names=all_lists)
 
 if __name__ == '__main__':
     app.run(host="localhost",port=6060, debug=False)

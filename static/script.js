@@ -55,6 +55,13 @@ function goToDonatePage() {
     window.location.href = "/donate";
 }
 
+function deleteList(el){
+    todel = el.getAttribute("whichlist")
+    if(confirm("Are you sure you want to delete this list?")){
+        window.location.href = "/deletelist?name=" + todel
+    }
+}
+
 function startPractice(el){
     el.style.backgroundColor = "#85C1E9"
     window.location.href = "/practice?listname=" + el.innerHTML

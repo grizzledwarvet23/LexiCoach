@@ -11,44 +11,19 @@
 		<h1 class="title">Vocabulary Practice</h1>
 		<p>Fill in the blanks with the correct terms.</p>
 
-		<form>
+		<form id="mainform">
+			{% for i in sentences %}
 			<div class="sentence">
-				<label for="word1" class="form-label">The _____ is red.</label>
-				<input type="text" id="word1" name="word1" class="form-input" required>
+				<label for="word{{i[1]}}" class="form-label">{{i[0]}}</label>
+				<input type="text" id="word{{i[1]}}" name="word{{i[1]}}" class="form-input" placeholder = "Answer..." cans={{i[2]}} required>
 			</div>
 
-			<div class="sentence">
-				<label for="word2" class="form-label">She _____ a book.</label>
-				<input type="text" id="word2" name="word2" class="form-input" required>
-			</div>
+			{% endfor %}
 
-			<div class="sentence">
-				<label for="word3" class="form-label">He _____ soccer every day.</label>
-				<input type="text" id="word3" name="word3" class="form-input" required>
-			</div>
-
-			<div class="sentence">
-				<label for="word4" class="form-label">They _____ to the beach on weekends.</label>
-				<input type="text" id="word4" name="word4" class="form-input" required>
-			</div>
-
-			<div class="sentence">
-				<label for="word5" class="form-label">I _____ a sandwich for lunch.</label>
-				<input type="text" id="word5" name="word5" class="form-input" required>
-			</div>
-
-			<button class="submit-btn" type="submit">Submit</button>
+			<button class="donate-btn" type="button" onclick="grade()">Submit</button>
 		</form>
 	</div>
 
-	<!-- Backend implementation will populate words here -->
-	<script>
-		// Replace these words with words retrieved from the backend
-		document.getElementById("word1").placeholder = "car";
-		document.getElementById("word2").placeholder = "reads";
-		document.getElementById("word3").placeholder = "plays";
-		document.getElementById("word4").placeholder = "go";
-		document.getElementById("word5").placeholder = "ate";
-	</script>
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

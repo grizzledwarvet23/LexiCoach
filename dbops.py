@@ -4,6 +4,7 @@
     as this .py file
 """
 import os
+import random
 import openai
 from flask import Flask, render_template
 from flask import request
@@ -38,25 +39,26 @@ class VocabList(db.Model):
 @app.route('/')
 def home():
     all_lists = db.session.execute(db.select(VocabList.name)).scalars()
-    print(all_lists)
-
     return render_template('home.html',names=all_lists)
 
 @app.route('/practice')
 def practice():
     search = request.args.get('listname', '')
-    k = db.session.execute(db.select(VocabList).filter_by(name=search)).scalar_one()
+    k = db.session.execute(db.select(VocabList).filter_by(name = search)).scalar_one()
     words = k.vocab.split(",")
+    random.shuffle(words)
     lan = k.language
-    
     toret = ""
     
-    sentences = gen_sent(words,lan)
+    s = gen_sent(words,lan)
     
-    return (" ".join(sentences))
+    return render_template('practice.html',sentences=s)
     
 
-    
+@app.route('/create-vocablist')
+def create_vocablist():
+    return render_template('create.html')
+
 @app.route('/addlist')
 def add():
     voc = request.args.get('vocab', '')
@@ -69,7 +71,9 @@ def add():
     l.name = name
     db.session.add(l)
     db.session.commit()
-    return render_template('home.html')
+
+    all_lists = db.session.execute(db.select(VocabList.name)).scalars()
+    return render_template('home.html',names=all_lists)
 
 
 

@@ -71,6 +71,7 @@ textarea {
 	border-radius: 20px;
 	font-size: 16px;
 	cursor: pointer;
+	width: 50%;
 }
 
 .recent-btn:last-child {
@@ -94,6 +95,23 @@ textarea {
 	border: none;
 	cursor: pointer;
 }
+
+.create-button {
+	display: block;
+	background-color: #3d3d3d;
+	color: #fff;
+	padding: 2px 96px;
+	border-radius: 30px;
+	font-size: 32px;
+	font-weight: 600;
+	margin: 0 auto 30px;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	place-items: center;
+	width: 100%;
+}
+
 
 .create-btn:hover {
 	background-color: #4d4d4d;

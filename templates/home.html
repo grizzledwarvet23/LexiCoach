@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LexiCoach</title>
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -9,8 +9,8 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="title">LexiCoach</h1>
-		<div class="recently-practiced">
+		<button class="create-button" onclick="goToHome()"><h1 class="title">LexiCoach</h1></button>
+		<div class="recently-practiced items-center text-center ">
 			<h2 class="section-title">Recently Practiced Lists</h2>
 			<div class="scroll-box">
 			{% for i in names %}

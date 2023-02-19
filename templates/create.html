@@ -11,7 +11,7 @@
 	<div class="container">
 		<button class="home-button" onclick="goToHome()"><h1 class="title">LexiCoach</h1></button>
 		<h1 class="title">Create New VocabList</h1>
-		<!-- <form onsubmit="handleSubmit(event)"> -->
+		<div style="padding-left: 32px; padding-right: 32px; ">
 			<label for="vocablist-title" class="form-label">VocabList Title:</label>
 			<input placeholder="Enter title..." type="text" id="vocablist-title" name="vocablist-title" class="form-input" required>
 
@@ -33,32 +33,32 @@
 			</select>
 
 			<div id="terms-container">
-                <div class="term-group">
-                    <label for="term1" class="form-label">Term 1:</label>
-                    <input placeholder="Enter term..." type="text" id="term1" name="term1" class="form-input" required>
-                </div>
-                <div class="term-group">
-                    <label for="term2" class="form-label">Term 2:</label>
-                    <input placeholder="Enter term..." type="text" id="term2" name="term2" class="form-input" required>
-                </div>
-                <div class="term-group">
-                    <label for="term3" class="form-label">Term 3:</label>
-                    <input placeholder="Enter term..." type="text" id="term3" name="term3" class="form-input" required>
-                </div>
-                <div class="term-group">
-                    <label for="term4" class="form-label">Term 4:</label>
-                    <input placeholder="Enter term..." type="text" id="term4" name="term4" class="form-input" required>
-                </div>
-                <div class="term-group">
-                    <label for="term5" class="form-label">Term 5:</label>
-                    <input placeholder="Enter term..." type="text" id="term5" name="term5" class="form-input" required>
-                </div>
-            </div>
+				<div class="term-group">
+					<label for="term1" class="form-label">Term 1:</label>
+					<input placeholder="Enter term..." type="text" id="term1" name="term1" class="form-input" required>
+				</div>
+				<div class="term-group">
+					<label for="term2" class="form-label">Term 2:</label>
+					<input placeholder="Enter term..." type="text" id="term2" name="term2" class="form-input" required>
+				</div>
+				<div class="term-group">
+					<label for="term3" class="form-label">Term 3:</label>
+					<input placeholder="Enter term..." type="text" id="term3" name="term3" class="form-input" required>
+				</div>
+				<div class="term-group">
+					<label for="term4" class="form-label">Term 4:</label>
+					<input placeholder="Enter term..." type="text" id="term4" name="term4" class="form-input" required>
+				</div>
+				<div class="term-group">
+					<label for="term5" class="form-label">Term 5:</label>
+					<input placeholder="Enter term..." type="text" id="term5" name="term5" class="form-input" required>
+				</div>
+            		</div>
 
 			<button id="addTermBtn" onclick="addTerm()" class="add-term-btn" type="button">Add Term +</button>
 
 			<button class="create-btn" onclick="goToHomeWindow()" type="submit">Create</button>
-		<!-- </form> -->
+		</div>
 	</div>
 
 	<script src="{{ url_for('static', filename='script.js') }}"></script>

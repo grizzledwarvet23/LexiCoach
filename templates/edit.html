@@ -11,7 +11,7 @@
 	<div class="container">
 		<button class="home-button" onclick="goToHome()"><h1 class="title">LexiCoach</h1></button>
 		<h1 class="title">Edit VocabList</h1>
-		<!-- <form onsubmit="handleSubmit(event)"> -->
+		<div style="padding-left: 32px; padding-right: 32px; ">
 			<label for="vocablist-title" class="form-label">VocabList Title:</label>
 			<input placeholder="Enter title..." value = "{{title}}" type="text" id="vocablist-title" name="vocablist-title" class="form-input" readonly required>
 
@@ -53,7 +53,7 @@
 
 			<button class="create-btn" onclick="submitEdit()" type="submit">Save Changes</button>
 			<button class="donate-btn" onclick="deleteList(this)" whichlist="{{title}}">Delete List</button>
-		<!-- </form> -->
+		</div>
 	</div>
 
 	<script src="{{ url_for('static', filename='script.js') }}"></script>

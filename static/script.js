@@ -60,15 +60,22 @@ function addTerm() {
 }
 
 function grade(){
-    var num_s = document.getElementById("mainform").childElementCount;
-    for(let i = 1; i <= num_s-1; i++){
-        if(document.getElementById("word"+i).value == document.getElementById("word"+i).getAttribute("cans")){
+    var num_s = document.getElementById("mainform").childElementCount - 1;
+    var num_r = 0;
+    for(let i = 1; i <= num_s; i++){
+        document.getElementById("label"+i).innerHTML = document.getElementById("word"+i).getAttribute("fullse")
+        if(document.getElementById("word"+i).value.toLowerCase() == document.getElementById("word"+i).getAttribute("cans").toLowerCase()){
             document.getElementById("word"+i).style.color = "green"
+            document.getElementById("word"+i).style.backgroundColor = "#82E0AA"
+            num_r += 1;
         }
         else{
-            document.getElementById("word"+i).style.color = "red"
+            document.getElementById("word"+i).style.color = "#7B241C"
+            document.getElementById("word"+i).style.backgroundColor = "#F1948A"
         }
     }
+    document.getElementById("scoreholder").innerHTML = "You got " + num_r + " of " + num_s + "."
+
 
 }
 

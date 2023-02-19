@@ -9,13 +9,14 @@
 <body>
 	<div class="container">
 		<h1 class="title">Vocabulary Practice</h1>
-		<p>Fill in the blanks with the correct terms.</p>
+		<h3><strong id="scoreholder"></strong></h3>
+		<h3>Fill in the blanks with the correct terms.</h3>
 
 		<form id="mainform">
 			{% for i in sentences %}
 			<div class="sentence">
-				<label for="word{{i[1]}}" class="form-label">{{i[0]}}</label>
-				<input type="text" id="word{{i[1]}}" name="word{{i[1]}}" class="form-input" placeholder = "Answer..." cans={{i[2]}} required>
+				<label for="word{{i[1]}}" id=label{{i[1]}} class="form-label">{{i[0]}}</label>
+				<input type="text" id="word{{i[1]}}" name="word{{i[1]}}" class="form-input" placeholder = "Answer..." cans = "{{i[2]}}" fullse = "{{i[3]}}" required>
 			</div>
 
 			{% endfor %}

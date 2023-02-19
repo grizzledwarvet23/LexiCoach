@@ -4,7 +4,7 @@ import openai
 
 def gen_sent(words,language):
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    max_tries = 5
+    max_tries = 3
     sentences = []
     ind = 1
     
@@ -28,6 +28,6 @@ def gen_sent(words,language):
                 num_tries += 1
         
         if solved:
-            sentences += [(re.sub(r"(.*)\b"+w+"(.*)",r"\1_______\2",response['choices'][0]['text']),ind,w)]
+            sentences += [(re.sub(r"(.*)\b"+w+"(.*)",r"\1_______\2",response['choices'][0]['text']),ind,w,response['choices'][0]['text'])]
             ind += 1
     return sentences

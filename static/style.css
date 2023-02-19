@@ -73,17 +73,44 @@ textarea {
 	border-radius: 20px;
 	font-size: 16px;
 	cursor: pointer;
-	width: 50%;
+	width: 40%;
+	display: inline-block;
 }
 
 .recent-btn:last-child {
 	margin-right: 0;
 }
+.icn{
+	height: 100%;
+	width: 100%;
+	max-width: 10px;
+}
 
 .recent-btn:hover {
 	background-color: #ccc;
 	color: #fff;
+	display: inline-block;
 }
+
+.edit-btn{
+	border: 2px solid #ccc;
+	background-color: #fff;
+	border-radius: 20px;
+	display: inline-block;
+	cursor: pointer;
+}
+.edit-btn:hover {
+	background-color: #ccc;
+}
+
+
+
+
+
+.button-ctr{
+	white-space: nowrap;
+}
+
 
 .create-btn {
 	display: block;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit VocabList</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+	<div class="container">
+		<button class="home-button" onclick="goToHome()"><h1 class="title">LexiCoach</h1></button>
+		<h1 class="title">Edit VocabList</h1>
+		<!-- <form onsubmit="handleSubmit(event)"> -->
+			<label for="vocablist-title" class="form-label">VocabList Title:</label>
+			<input placeholder="Enter title..." value = "{{title}}" type="text" id="vocablist-title" name="vocablist-title" class="form-input" readonly required>
+
+			<label for="language" class="form-label">Language:</label>
+			<select id="language" name="language" value = "{{lang}}"class="form-input">
+				<option value="{{lang}}">{{lang}}</option>
+			</select>
+
+			<div id="terms-container">
+                <div class="term-group">
+                    <label for="term1" class="form-label">Term 1:</label>
+                    <input placeholder="Enter term..." value="{{t1}}" type="text" id="term1" name="term1" class="form-input" required>
+                </div>
+                <div class="term-group">
+                    <label for="term2" class="form-label">Term 2:</label>
+                    <input placeholder="Enter term..." type="text" value="{{t2}}" id="term2" name="term2" class="form-input" required>
+                </div>
+                <div class="term-group">
+                    <label for="term3" class="form-label">Term 3:</label>
+                    <input placeholder="Enter term..." type="text" value="{{t3}}" id="term3" name="term3" class="form-input" required>
+                </div>
+                <div class="term-group">
+                    <label for="term4" class="form-label">Term 4:</label>
+                    <input placeholder="Enter term..." type="text" value="{{t4}}" id="term4" name="term4" class="form-input" required>
+                </div>
+                <div class="term-group">
+                    <label for="term5" class="form-label">Term 5:</label>
+                    <input placeholder="Enter term..." type="text" value="{{t5}}" id="term5" name="term5" class="form-input" required>
+                </div>
+                {% for i in overflow %}
+                <div class="term-group">
+                    <label for="term{{i[0]}}" class="form-label">placeholder</label>
+                    <input placeholder="Enter term..." type="text" value="{{i[1]}}" id="term{{i[0]}}" name="term{{i[0]}}" class="form-input" required>
+                </div>
+                {% endfor %}
+            </div>
+
+			<button id="addTermBtn" onclick="addTerm()" class="add-term-btn" type="button">Add Term +</button>
+
+			<button class="create-btn" onclick="submitEdit()" type="submit">Save Changes</button>
+			<button class="donate-btn" onclick="deleteList(this)" whichlist="{{title}}">Delete List</button>
+		<!-- </form> -->
+	</div>
+
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>

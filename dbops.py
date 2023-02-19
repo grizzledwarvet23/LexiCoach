@@ -45,6 +45,7 @@ def home():
 def donation():
     return render_template('donation.html')
 
+
 @app.route('/practice')
 def practice():
     search = request.args.get('listname', '')
@@ -64,6 +65,24 @@ def practice():
 @app.route('/create-vocablist')
 def create_vocablist():
     return render_template('create.html')
+
+@app.route('/edit')
+def edit():
+    search = request.args.get('listname', '')
+    k = db.session.execute(db.select(VocabList).filter_by(name = search)).scalars().first()
+    if(k == None):
+        return("<p>Sorry: we couldn't find a vocab list with that name.</p><a href = '/'>Home</a>")
+    words = k.vocab.split(",")
+    ff = [""]*5
+    overflows = []
+    for i in range(len(words)):
+        if i < 5:
+            ff[i] = words[i]
+        else:
+            overflows += [(i+1,words[i])]
+
+
+    return render_template('edit.html',t1=ff[0],t2=ff[1],t3=ff[2],t4=ff[3],t5=ff[4],overflow=overflows,title=k.name,lang=k.language)
 
 @app.route('/addlist')
 def add():
@@ -86,8 +105,32 @@ def add():
     
     all_lists = db.session.execute(db.select(VocabList.name)).scalars()
     return render_template('home.html',names=all_lists)
+@app.route('/editlist')
+def editlist():
+    voc = request.args.get('vocab', '')
+    lan = request.args.get('language', '')
+    name = request.args.get('name', '')
+    
+    k = db.session.execute(db.select(VocabList).filter_by(name = name)).scalars().first()
+    if(k == None):
+        return("<p>Sorry: you can't edit a vocab list that doesn't exist.</p><a href = '/'>Home</a>")
 
 
+    k.vocab = voc
+    k.language = lan
+    k.name = name
+    db.session.commit()
+
+    all_lists = db.session.execute(db.select(VocabList.name)).scalars()
+    return render_template('home.html',names=all_lists)
+
+@app.route('/deletelist')
+def dellist():
+    name = request.args.get('name', '')
+    VocabList.query.filter_by(name=name).delete()
+    db.session.commit()
+    all_lists = db.session.execute(db.select(VocabList.name)).scalars()
+    return render_template('home.html',names=all_lists)
 
 if __name__ == '__main__':
     app.run(host="localhost",port=6060, debug=False)

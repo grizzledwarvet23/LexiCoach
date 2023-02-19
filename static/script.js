@@ -31,8 +31,35 @@ function goToHomeWindow() {
     
 }
 
+function submitEdit() {
+    //print("hello");
+    var l_element = document.getElementById("language");
+    var lan = l_element.options[l_element.selectedIndex].text;
+    var _name = document.getElementById("vocablist-title").value;
+    var terms_no = document.getElementById("terms-container").childElementCount;
+    var terms_tot = ""
+    for(let i = 1; i <= terms_no; i++){
+        if (document.getElementById("term" + i).value != ""){
+            if(i != 1){
+                terms_tot = terms_tot + ",";
+            }
+            terms_tot = terms_tot + document.getElementById("term" + i).value;
+        }
+
+    }
+    window.location.href = "/editlist?name=" + _name + "&language=" + lan + "&vocab=" + terms_tot;
+    
+}
+
 function goToDonatePage() {
     window.location.href = "/donate";
+}
+
+function deleteList(el){
+    todel = el.getAttribute("whichlist")
+    if(confirm("Are you sure you want to delete this list?")){
+        window.location.href = "/deletelist?name=" + todel
+    }
 }
 
 function startPractice(el){
@@ -63,6 +90,10 @@ function addTerm() {
     termGroup.appendChild(input);
   
     container.appendChild(termGroup);
+}
+
+function startEdit(el){
+    window.location.href = "/edit?listname="+el.getAttribute("toedit")
 }
 
 function grade(){
